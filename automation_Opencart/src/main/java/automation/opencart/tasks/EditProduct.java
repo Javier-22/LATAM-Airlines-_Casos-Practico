@@ -33,5 +33,5 @@ public class EditProduct implements Task {
         Wait.Time(5000);
 
     }
-    public static EditProduct Edit(List<DataModelFilter> filt){return Tasks.instrumented(EditProduct.class, filt);}
+    public static EditProduct andSave(List<DataModelFilter> filt){return Tasks.instrumented(EditProduct.class, filt);}
 }

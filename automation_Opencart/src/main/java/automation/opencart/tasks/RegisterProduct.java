@@ -32,5 +32,5 @@ public class RegisterProduct implements Task {
 
     }
 
-    public static RegisterProduct Date(List<DataModelRegisterProduct> date){return Tasks.instrumented(RegisterProduct.class, date);}
+    public static RegisterProduct intoForm(List<DataModelRegisterProduct> date){return Tasks.instrumented(RegisterProduct.class, date);}
 }

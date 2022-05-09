@@ -16,6 +16,6 @@ public class ConfirmSearch implements Question<Boolean> {
         return resp;
     }
 
-    public static ConfirmSearch isClickeable() { return new ConfirmSearch();
+    public static ConfirmSearch isAvaliable() { return new ConfirmSearch();
     }
 }

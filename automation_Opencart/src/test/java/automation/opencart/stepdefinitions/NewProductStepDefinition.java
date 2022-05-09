@@ -24,23 +24,21 @@ public class NewProductStepDefinition {
     @Before
     public void sedStage(){
         OnStage.setTheStage(new OnlineCast());}
-    @Given("^that the user wants to enter the Open Car page$")
-    public void thatTheUserWantsToEnterTheOpenCarPage() {
-        theActorCalled("user").wasAbleTo(OpenUp.theUrl());
-    }
 
-    @When("^the user enters the credentials to enter the system$")
-    public void theUserEntersTheCredentialsToEnterTheSystem(List<DataModelCredentials>dataModelCredentials) {
-        theActorInTheSpotlight().attemptsTo(Login.Credentials(dataModelCredentials));
+    @Given("^that the user wants to enter the Open Car page andv enters the credentials to enter the system$")
+    public void thatTheUserWantsToEnterTheOpenCarPageAndvEntersTheCredentialsToEnterTheSystem(List<DataModelCredentials>dataModelCredentials) {
+        theActorCalled("user").wasAbleTo(OpenUp.theUrl(),
+                Login.Credentials(dataModelCredentials));
     }
-    @And("^register a product$")
+    @When("^register a product$")
     public void registerAProduct(List<DataModelRegisterProduct>dataModelRegisterProducts) {
-        theActorInTheSpotlight().attemptsTo(RegisterProduct.Date(dataModelRegisterProducts));
-    }
+        theActorInTheSpotlight().attemptsTo(RegisterProduct.intoForm(dataModelRegisterProducts));}
 
     @Then("^verify that the following error appears (.*)$")
     public void verifyThatTheFollowingErrorAppearsWarningYouDoNotHavePermissionToModifyProducts(String question) {
         theActorInTheSpotlight().should(GivenWhenThen.seeThat(WarningMessage.fails(question)));
 
     }
+
+
 }

@@ -30,5 +30,5 @@ public class FilterProducts implements Task {
         Wait.Time(5000);
 
     }
-    public static FilterProducts Filter(List<DataModelFilter>filter){return Tasks.instrumented(FilterProducts.class, filter);}
+    public static FilterProducts registered(List<DataModelFilter>filter){return Tasks.instrumented(FilterProducts.class, filter);}
 }

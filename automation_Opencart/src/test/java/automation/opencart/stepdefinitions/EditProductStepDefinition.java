@@ -4,8 +4,8 @@ import automation.opencart.models.DataModelFilter;
 import automation.opencart.questions.WarningMessage;
 import automation.opencart.tasks.EditProduct;
 import cucumber.api.java.Before;
-import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 import net.serenitybdd.screenplay.GivenWhenThen;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
@@ -19,9 +19,9 @@ public class EditProductStepDefinition {
     public void sedStage(){
         OnStage.setTheStage(new OnlineCast());}
 
-    @And("^we filter the product to edit$")
+    @When("^we filter the product to edit$")
     public void weFilterTheProductToEdit(List<DataModelFilter>dataModelFilters) {
-        theActorInTheSpotlight().attemptsTo(EditProduct.Edit(dataModelFilters));
+        theActorInTheSpotlight().attemptsTo(EditProduct.andSave(dataModelFilters));
 
     }
 

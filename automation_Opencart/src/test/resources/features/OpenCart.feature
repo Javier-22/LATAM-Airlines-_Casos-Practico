@@ -1,14 +1,13 @@
 @story
-  Feature:Verify the operation of the different options offered by the Open Cart page
-          in the administration of customizable e-commerce stores.
+Feature:Verify the operation of the different options offered by the Open Cart page
+        in the administration of customizable e-commerce stores.
 
           As a user,
           I want to verify the operation of the openCart options
           for the administration of e-commerce stores.
 
   Background:
-   Given that the user wants to enter the Open Car page
-   And the user enters the credentials to enter the system
+   Given that the user wants to enter the Open Car page andv enters the credentials to enter the system
      |strUserName|strpassword  |
      |demo       |demo         |
 
@@ -30,7 +29,7 @@
       When we filter the product to edit
        |strProduct_Name      |
        |Apple Cinema 30      |
-        Then verify that the following error message appears Warning: You do not have permission to modify products!
+      Then verify that the following error message appears Warning: You do not have permission to modify products!
 
 
 
